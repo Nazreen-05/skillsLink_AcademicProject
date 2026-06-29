@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<!-- Nazreen Ryklief | RYKNAZ002 | INF3014F Project -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse Services - Skills and Services</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      height: 38px;
+      width: 38px;
+      object-fit: contain;
+    }
+    .star-rating {
+      color: #185FA5;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin: 4px 0;
+    }
+    .extra-info {
+      display: none;
+      background-color: #f0f7ff;
+      border-top: 1px solid #D3D1C7;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #5F5E5A;
+      text-align: left;
+    }
+    .extra-info p {
+      margin-bottom: 5px;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #185FA5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+    }
+    .back-to-top:hover {
+      background-color: #0C447C;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="logo">
+      <img src="../images/ssLogo.png" alt="Skills and Services logo">
+      Skills and Services
+    </h1>
+    <input type="text" class="search-input" placeholder="Search for a skill or service" aria-label="Search">
+  </header>
+
+  <!-- Nav Bar -->
+  <nav class="nav">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Browse Services</a>
+    <a href="register.html">Join</a>
+    <a href="shoppingCart.html">Cart </a>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <h1>Browse Services</h1>
+    <p>Find trusted local service providers in Mitchell's Plain and the Cape Flats.</p>
+  </div>
+
+  <main>
+
+    <!-- Category Filter Buttons -->
+    <div class="filter-bar">
+      <span class="filter-label">Filter by category:</span>
+      <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+      <button class="filter-btn" onclick="filterCategory('beauty')">Hair &amp; Beauty</button>
+      <button class="filter-btn" onclick="filterCategory('nails')">Nail Design</button>
+      <button class="filter-btn" onclick="filterCategory('plumbing')">Plumbing</button>
+      <button class="filter-btn" onclick="filterCategory('tutoring')">Tutoring</button>
+      <button class="filter-btn" onclick="filterCategory('cars')">Cars</button>
+      <button class="filter-btn" onclick="filterCategory('catering')">Catering</button>
+    </div>
+
+    <div class="catalogue-container">
+
+      <!-- Hair & Beauty -->
+      <section class="category-block" id="beauty">
+        <h2>Hair &amp; Beauty</h2>
+        <p class="category-desc">Professional hair styling, braiding, and beauty treatments from local experts.</p>
+        <div class="category-grid">
+
+          <div class="cat-card">
+            <img src="../images/braiding.jpg" alt="Hair braiding service">
+            <p class="service-name">Hair Braiding</p>
+            <p class="service-provider">Elle Daniels</p>
+            <p class="star-rating">* * * * *</p>
+            <p class="service-price">From R150</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-hair-braiding')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Hair Braiding', 'Elle Daniels', 150, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-hair-braiding">
+              <p><strong>About:</strong> Box braids, cornrows, twists and knotless braids. Over 6 years experience.</p>
+              <p><strong>Duration:</strong> 2 to 4 hours</p>
+              <p><strong>Available:</strong> Mon to Sat, 9am to 6pm</p>
+              <p><strong>Review:</strong> "Best braider in Mitchell's Plain!" — Elle Daniels.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/hair.jpg" alt="Natural hair styling">
+            <p class="service-name">Natural Styling</p>
+            <p class="service-provider">Leila Coleman</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R180</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-natural-styling')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Natural Styling', 'Leila Coleman', 180, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-natural-styling">
+              <p><strong>About:</strong> Wash and go, twist outs, bantu knots and protective styles.</p>
+              <p><strong>Duration:</strong> 1 to 3 hours</p>
+              <p><strong>Available:</strong> Mon, Wed, Fri, 9am to 4pm</p>
+              <p><strong>Review:</strong> "I finally feel confident in my natural hair." — Fatima S.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Nail Design -->
+      <section class="category-block" id="nails">
+        <h2>Nail Design</h2>
+        <p class="category-desc">Gel nails, acrylics, nail art and more from skilled local nail technicians.</p>
+        <div class="category-grid">
+
+          <div class="cat-card">
+            <img src="../images/gel nails.jpg" alt="Gel nail extensions">
+            <p class="service-name">Gel Extensions</p>
+            <p class="service-provider">Shantel October</p>
+            <p class="star-rating">* * * * *</p>
+            <p class="service-price">From R250</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-gel')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Gel Extensions', 'Shantel October', 250, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-gel">
+              <p><strong>About:</strong> Premium gel extensions, full sets and infills.</p>
+              <p><strong>Duration:</strong> 2 hours</p>
+              <p><strong>Available:</strong> Mon to Sat, 9am to 7pm</p>
+              <p><strong>Review:</strong> "They lasted a full month with no lifting." — Bianca J.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/acryllic nails.jpg" alt="Acrylic nails">
+            <p class="service-name">Acrylic Nails</p>
+            <p class="service-provider">Bianca Jansen</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R220</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-acrylic')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Acrylic Nails', 'Bianca Jansen', 220, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-acrylic">
+              <p><strong>About:</strong> Full sets and infills in a wide range of shapes and lengths.</p>
+              <p><strong>Duration:</strong> 1.5 to 2 hours</p>
+              <p><strong>Available:</strong> Weekdays 10am to 6pm, Sat 9am to 3pm</p>
+              <p><strong>Review:</strong> "Really good quality for the price." — Shantel O.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/nail designs.jpg" alt="Nail art design">
+            <p class="service-name">Nail Art</p>
+            <p class="service-provider">Roxy Hendricks</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R180</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-nail-art')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Nail Art', 'Roxy Hendricks', 180, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-nail-art">
+              <p><strong>About:</strong> Freehand nail art, stamping and custom designs.</p>
+              <p><strong>Duration:</strong> Add-on to any nail service</p>
+              <p><strong>Available:</strong> Fri to Sun, 10am to 6pm</p>
+              <p><strong>Review:</strong> "She drew a tiny flower on each nail freehand." — Bianca J.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Plumbing -->
+      <section class="category-block" id="plumbing">
+        <h2>Plumbing</h2>
+        <p class="category-desc">Reliable plumbing repairs and installations by verified local tradespeople.</p>
+        <div class="category-grid">
+
+          <div class="cat-card">
+            <img src="../images/pipe repairs.jpg" alt="Pipe repair service">
+            <p class="service-name">Pipe Repairs</p>
+            <p class="service-provider">Ashraf Williams</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R300</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-pipe')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Pipe Repairs', 'Ashraf Williams', 300, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-pipe">
+              <p><strong>About:</strong> Burst pipes, leaks, pipe replacements and general plumbing repairs.</p>
+              <p><strong>Duration:</strong> 1 to 3 hours</p>
+              <p><strong>Available:</strong> Mon to Fri, 7am to 5pm. Weekend callouts available.</p>
+              <p><strong>Review:</strong> "Fixed my burst pipe in under an hour." — Deon F.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/tap installation.jpg" alt="Tap installation service">
+            <p class="service-name">Tap Installation</p>
+            <p class="service-provider">Deon Februarie</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R250</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-tap')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Tap Installation', 'Deon Februarie', 250, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-tap">
+              <p><strong>About:</strong> Installs and replaces taps, mixers and shower heads.</p>
+              <p><strong>Duration:</strong> Under 1 hour</p>
+              <p><strong>Available:</strong> Mon to Sat, 8am to 4pm</p>
+              <p><strong>Review:</strong> "Very neat work. He even cleaned up after himself." — Gavin A.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/drain.jpg" alt="Drain unblocking service">
+            <p class="service-name">Drain Unblocking</p>
+            <p class="service-provider">Naufal Samuels</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R200</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-drain')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Drain Unblocking', 'Naufal Samuels', 200, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-drain">
+              <p><strong>About:</strong> Clears blockages in kitchens, bathrooms and outdoor drains.</p>
+              <p><strong>Duration:</strong> 30 to 60 minutes</p>
+              <p><strong>Available:</strong> Mon to Fri, 8am to 5pm. Saturday mornings.</p>
+              <p><strong>Review:</strong> "Cleared a drain blocked for weeks. Fast and effective." — Ashraf W.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Tutoring -->
+      <section class="category-block" id="tutoring">
+        <h2>Tutoring</h2>
+        <p class="category-desc">Academic support for learners from Grade 8 to Grade 12 by qualified local tutors.</p>
+        <div class="category-grid">
+
+          <div class="cat-card">
+            <img src="../images/math.jpg" alt="Maths tutoring">
+            <p class="service-name">Maths Tutoring</p>
+            <p class="service-provider">Marco Jansen</p>
+            <p class="star-rating">* * * * *</p>
+            <p class="service-price">From R200</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-maths')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Maths Tutoring', 'Marco Jansen', 200, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-maths">
+              <p><strong>About:</strong> Maths tutoring for Grade 8 to Grade 12. Notes and past papers provided.</p>
+              <p><strong>Duration:</strong> 1 hour per session</p>
+              <p><strong>Available:</strong> Weekdays 3pm to 7pm, Sat 9am to 1pm</p>
+              <p><strong>Review:</strong> "My son's mark went from 40% to 72%!" — Fatima S.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/english.jpg" alt="English tutoring">
+            <p class="service-name">English Tutoring</p>
+            <p class="service-provider">Aisha Fortune</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R180</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-english')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('English Tutoring', 'Aisha Fortune', 180, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-english">
+              <p><strong>About:</strong> English HL and FAL for Grade 8 to 12. Focus on essays and literature.</p>
+              <p><strong>Duration:</strong> 1 hour per session</p>
+              <p><strong>Available:</strong> Mon, Wed, Fri, 2pm to 6pm</p>
+              <p><strong>Review:</strong> "My daughter's confidence improved a lot." — Leila D.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/science.jpg" alt="Science tutoring">
+            <p class="service-name">Science Tutoring</p>
+            <p class="service-provider">Tauriq Petersen</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R200</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-science')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Science Tutoring', 'Tariq Petersen', 200, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-science">
+              <p><strong>About:</strong> Physical Science and Life Sciences for Grade 10 to 12.</p>
+              <p><strong>Duration:</strong> 1 hour per session</p>
+              <p><strong>Available:</strong> Tue and Thu 3pm to 7pm, Sat 9am to 12pm</p>
+              <p><strong>Review:</strong> "My son went from failing to passing science." — Marco J.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Cars -->
+      <section class="category-block" id="cars">
+        <h2>Cars</h2>
+        <p class="category-desc">Professional car maintenance and repair services by certified mechanics.</p>
+        <div class="category-grid">
+
+          <div class="cat-card">
+            <img src="../images/car maintenance.jpg" alt="Car maintenance service">
+            <p class="service-name">Car Maintenance</p>
+            <p class="service-provider">Manday McDonald</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R250</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-car-maintenance')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Car Maintenance', 'Manday Mcdonald', 250, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-car-maintenance">
+              <p><strong>About:</strong> Oil changes, filter replacements and general vehicle checks.</p>
+              <p><strong>Duration:</strong> 1 to 2 hours</p>
+              <p><strong>Available:</strong> Mon to Fri, 8am to 5pm</p>
+              <p><strong>Review:</strong> "Very thorough and honest. Will not overcharge you." — Sipho N.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/car repair.jpg" alt="Car repair service">
+            <p class="service-name">Car Repair</p>
+            <p class="service-provider">Sipho Nkosi</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R280</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-car-repair')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Car Repair', 'Sipho Nkosi', 280, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-car-repair">
+              <p><strong>About:</strong> Engine, brake, and general mechanical repairs.</p>
+              <p><strong>Duration:</strong> Depends on job</p>
+              <p><strong>Available:</strong> Mon to Sat, 7am to 5pm</p>
+              <p><strong>Review:</strong> "Sipho fixed my brakes quickly and at a fair price." — Kareem A.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/car detailing.jpg" alt="Car detailing service">
+            <p class="service-name">Car Detailing</p>
+            <p class="service-provider">Kareem Adams</p>
+            <p class="star-rating">* * * * *</p>
+            <p class="service-price">From R300</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-car-detailing')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Car Detailing', 'Kareem Adams', 300, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-car-detailing">
+              <p><strong>About:</strong> Full interior and exterior car detailing and polish.</p>
+              <p><strong>Duration:</strong> 2 to 3 hours</p>
+              <p><strong>Available:</strong> Weekends only, 8am to 4pm</p>
+              <p><strong>Review:</strong> "My car looked brand new after Kareem finished." — Marcus V.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Catering -->
+      <section class="category-block" id="catering">
+        <h2>Catering</h2>
+        <p class="category-desc">Homemade meals, event catering, and baked goods from local cooks.</p>
+        <div class="category-grid">
+
+          <div class="cat-card">
+            <img src="../images/catering.jpg" alt="Event catering service">
+            <p class="service-name">Event Catering</p>
+            <p class="service-provider">Nadia Pieterse</p>
+            <p class="star-rating">* * * * *</p>
+            <p class="service-price">From R500</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-event-catering')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Event Catering', 'Nadia Pieterse', 500, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-event-catering">
+              <p><strong>About:</strong> Catering for birthdays, braais, funerals and community events.</p>
+              <p><strong>Duration:</strong> Full day depending on event size</p>
+              <p><strong>Available:</strong> 7 days a week with advance booking</p>
+              <p><strong>Review:</strong> "The food was absolutely delicious." — Fatima S.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/cupcakes.jpg" alt="Baked goods service">
+            <p class="service-name">Baked Goods</p>
+            <p class="service-provider">Zainab Jacobs</p>
+            <p class="star-rating">* * * * *</p>
+            <p class="service-price">From R120</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-baked')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Baked Goods', 'Zainab Jacobs', 120, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-baked">
+              <p><strong>About:</strong> Koesisters, samoosas, cakes, cupcakes and Cape Malay treats.</p>
+              <p><strong>Duration:</strong> Made fresh to order</p>
+              <p><strong>Available:</strong> Orders Mon to Thu for weekend collection</p>
+              <p><strong>Review:</strong> "Zainab's koesisters are the best I have ever tasted." — Nadia P.</p>
+            </div>
+          </div>
+
+          <div class="cat-card">
+            <img src="../images/braai.jpg" alt="Braai and meals service">
+            <p class="service-name">Braai</p>
+            <p class="service-provider">Jerome Williams</p>
+            <p class="star-rating">* * * * -</p>
+            <p class="service-price">From R350</p>
+            <div class="cat-card-actions">
+              <button class="view-btn" onclick="toggleInfo('info-braai')">View Service</button>
+              <button class="wishlist-btn" onclick="addToCart('Braai', 'Jerome Williams', 350, this)">Book Service</button>
+            </div>
+            <div class="extra-info" id="info-braai">
+              <p><strong>About:</strong> Braai and meals service for gatherings up to 50 people.</p>
+              <p><strong>Duration:</strong> Full afternoon</p>
+              <p><strong>Available:</strong> Weekends only, 5 days notice required</p>
+              <p><strong>Review:</strong> "The meat was perfectly cooked all afternoon." — Gavin A.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to top</button>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong class="footer-brand">Skills and Services</strong></p>
+    <div class="footer-divider"></div>
+    <p>Empowering Mitchell's Plain one skill at a time.</p>
+    <p>2026 Skills and Services. All rights reserved.</p>
+    <p>Email: <a href="mailto:skillslinkinfo.co.za">skillslinkinfo.co.za</a></p>
+    <p>Phone: +27 67 845 5679</p>
+  </footer>
+
+  <script>
+    function getCart() {
+      return JSON.parse(sessionStorage.getItem('cart') || '[]');
+    }
+
+    function addToCart(name, provider, price, btn) {
+      const cart = getCart();
+      if (cart.some(item => item.name === name)) {
+        alert(name + ' is already in your cart.');
+        return;
+      }
+      cart.push({ name, provider, price });
+      sessionStorage.setItem('cart', JSON.stringify(cart));
+      btn.textContent = 'Added!';
+      btn.disabled = true;
+      document.getElementById('cart-count').textContent = getCart().length;
+    }
+
+    function filterCategory(cat) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.category-block').forEach(section => {
+        section.style.display = (cat === 'all' || section.id === cat) ? 'block' : 'none';
+      });
+    }
+
+    function toggleInfo(id) {
+      const info = document.getElementById(id);
+      info.style.display = info.style.display === 'block' ? 'none' : 'block';
+    }
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+  
+  </script>
+
+</body>
+</html>

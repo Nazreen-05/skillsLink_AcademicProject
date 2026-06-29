@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- Nazreen Ryklief | RYKNAZ002 | INF3014F Project -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join - Skills and Services</title>
+  <link rel="stylesheet" href="../css/style.css">
+   <style>
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 38px;
+      width: 38px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Header -->
+    <header class="header">
+    <h1 class="logo">
+      <img src="../images/ssLogo.png" alt="Skills and Services logo">
+      Skills and Services
+    </h1>
+    <input type="text" class="search-input" placeholder="Search for a skill or service" aria-label="Search">
+  </header>
+
+  <!-- Nav Bar -->
+  <nav class="nav">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Browse Services</a>
+    <a href="register.html" class="active">Join</a>
+    <a href="shoppingCart.html">Cart</a>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <h1>Join as a provider</h1>
+    <p>List your skills and start earning from customers in your community.</p>
+  </div>
+
+  <main>
+    <div class="register-container">
+
+      <div class="register-intro">
+        <p>Fill in the form below. Once submitted, our team will review your listing and get back to you within <strong>2–3 business days</strong>.</p>
+      </div>
+
+      <div class="register-form-wrap">
+        <form action="confirmation.html" method="get">
+
+          <h2>Your details</h2>
+
+          <div class="form-group">
+            <label for="reg-name">Full name</label>
+            <input type="text" id="reg-name" name="name" placeholder="e.g. Jayden Hendricks">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-phone">Phone number</label>
+            <input type="tel" id="reg-phone" name="phone" placeholder="e.g. 071 234 5678">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-area">Area / suburb</label>
+            <input type="text" id="reg-area" name="area" placeholder="e.g. Tafelsig, Mitchell's Plain">
+          </div>
+
+          <h2 style="margin-top: 30px;">Your service</h2>
+
+          <div class="form-group">
+            <label for="reg-category">Service category</label>
+            <select id="reg-category" name="category">
+              <option value="" disabled selected>Select a category</option>
+              <option value="beauty">Hair &amp; Beauty</option>
+              <option value="nails">Nail Design</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="tutoring">Tutoring</option>
+              <option value="electrical">Electrical</option>
+              <option value="catering">Catering</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-service-name">Service name</label>
+            <input type="text" id="reg-service-name" name="service_name" placeholder="e.g. Hair Braiding, Maths Tutoring">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-description">Describe your service</label>
+            <textarea id="reg-description" name="description" rows="4" placeholder="Tell customers what you offer, how long it takes, what's included..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-price">Your price</label>
+            <input type="text" id="reg-price" name="price" placeholder="e.g. R150 per session">
+          </div>
+
+          <div class="form-group">
+            <label for="reg-photo">Upload a photo of your work (optional)</label>
+            <input type="file" id="reg-photo" name="photo" accept="image/*" class="file-input">
+          </div>
+
+          <button type="submit" class="confirm-btn">Submit my listing</button>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+ <footer>
+    <p><strong class="footer-brand">Skills and Services</strong></p>
+    <div class="footer-divider"></div>
+    <p>Empowering Mitchell's Plain one skill at a time.</p>
+     <p>2026 Skills and Services. All rights reserved.</p>
+    <p>Email: <a href="mailto:skillslinkinfo.co.za">skillslinkinfo.co.za</a></p>
+    <p>Phone: +27 67 845 5679</p>
+  </footer>
+
+</body>
+</html>
