@@ -1,4 +1,4 @@
-# Skills Link - Mitcchells Plain Local Platform
+# Skills Link - Mitchells Plain Local Platform
 ## INF3014F Individual eCommerce Project | 2026
 ## Project Requirements
 This project was built in response to the INF3014F 2026 Individual Project Brief, which required:
